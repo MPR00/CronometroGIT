@@ -1,0 +1,95 @@
+.App {
+  text-align: center;
+  background-color: #000000;
+}
+
+.App-link {
+  color: rgb(189, 114, 1)
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.cronometro-dentro{
+  background-color: #282c34;
+  height: auto;
+  width: auto;
+  color: aliceblue;
+  text-align: center;
+  border-radius: 25px;
+  margin-top: 1vh;
+  margin-left: 1vw;
+  margin-right: 1vw;
+  border: 1vh outset rgba(0,0,0,0.3);
+  box-shadow: 10px 10px 8px 10px #888888;
+}
+
+.cabecalho{
+  justify-content: center;
+  color: rgb(100, 98, 224);
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.mostrador{
+border-radius: 50%;
+border: 5px outset rgba(100, 98, 224, 0.3);
+justify-content: center;
+display: block;
+width: 100px;
+height: 100px;
+margin-top: 10vh;
+margin-left: auto;
+margin-right: auto;
+margin-bottom: 10vh;
+color:  rgb(100, 98, 224);
+}
+
+.botao{
+  width:15vw ;
+  height: auto;
+  margin-left: 1vw;
+  border-radius: 10vh;
+  padding: 1px 1px 1px 1px;
+  border:  outset rgba(100, 98, 224, 0.3);
+  background-color:  rgba(145, 144, 230, 0.3);
+  justify-content: center;
+  display: inline-block;
+  box-shadow: 1px 5px 10px #242424;
+}
+
+.parcial{
+  border-radius: 3vh;
+  margin-top: 15vh;
+  margin-left: 1vw;
+  margin-right: 1vw;
+  margin-bottom: 10vh;
+  padding-bottom: 5vh;
+  border-top: 5px outset rgba(0, 0, 0, 0.3);
+  justify-content: center;
+  height: auto;
+  color: #d1d1d1;;
+  box-shadow: 1px 2vh 5vh #242424;
+}
