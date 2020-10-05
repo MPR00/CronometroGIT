@@ -31,26 +31,26 @@ class Relogio extends React.Component {
 
   render() {
     return (
-      <div className="Relogio">
-        <div className="row">
-          <div className="relogio">
-            <div className="relogio-text">
-              <span className="relogio-dia">{this.getLabelDia()}</span>
-              <span className="relogio-tempo">{this.getLabelTempo()}</span>
-              <span className="relogio-timezone">{this.state.timezone}</span>
-            </div>
-          </div>
-        </div>
 
-        <div className="row row-buttons">
-          {this.state.zones.map(zone => {
-            return <button
-                    type="button"
-                    key={zone}
-                    onClick={event => this.setarTimeZone(zone)}>
-                    {zone}
-                  </button>
-          })}
+      <div className="relogio">
+
+        <div className="relogio-text">
+          <span className="relogio-dia">{this.getLabelDia()}</span>
+          <span className="relogio-tempo">{this.getLabelTempo()}</span>
+          <span className="relogio-timezone">{this.state.timezone}</span>
+
+
+          <div className="parcial parcial-buttons">
+            {this.state.zones.map(zone => {
+              return <button
+                type="button"
+                key={zone}
+                onClick={event => this.setarTimeZone(zone)}>
+                {zone}
+              </button>
+            })}
+          </div>
+
         </div>
       </div>
     );
