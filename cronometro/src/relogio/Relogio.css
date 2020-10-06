@@ -1,0 +1,72 @@
+.relogio {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  height: auto;
+  width: auto;
+  border-radius: 10px;
+  border: 5px outset rgba(0,0,0,0.3);
+  background-color: #282c34;
+  color: aliceblue;
+}
+
+.relogio-text {
+  margin-top: 15vh;
+  height: 100%;
+  width: 100%;
+  font-size: 4rem;
+  letter-spacing: 4px;
+  color: aliceblue;
+}
+
+.relogio-text .relogio-horario{
+  text-align: center;
+  display: block;
+}
+
+.relogio-text .relogio-data {
+  text-align: center;
+  display: block;
+  font-size: 16px;
+}
+
+.relogio-text .relogio-fuso {
+  display: block;
+  font-size: 14px;
+}
+
+.display{
+  height: 70vh;
+  width: 95vw;
+  border-radius: 3vh;
+  margin-left: 1vw;
+  border-top: 5px outset rgba(0, 0, 0, 0.3);
+  color: #d1d1d1;;
+  box-shadow: 1px 2vh 5vh #242424;
+  border-radius: 3vh;
+  margin-top: 10vh;
+  margin-left: 2vw;
+  margin-bottom: 10vh;
+  padding-bottom: 5vh;
+}
+
+.relogio .display button {
+  color: aliceblue;
+  width:25vw ;
+  height: 5vh;
+  margin-left: 1vw;
+  margin-right: 1vw;
+  border-radius: 3vw;
+  border:  outset rgba(100, 98, 224, 0.3);
+  background-color:  rgba(145, 144, 230, 0.3);
+  box-shadow: 1px 5px 10px #242424;
+}
+
+.relogio .display button:hover {
+  font-weight: bold;
+  color: rgba(100, 98, 224, 0.938);
+}
+
+.relogio .display-buttons {
+  text-align: center;
+}
