@@ -89,12 +89,14 @@ class Cronometro extends React.Component {
             <tr>
               <th>Volta</th>
               <th>Tempo</th>
+              <th>Intervalo</th>
             </tr>
 
             {this.state.series.map((serie, volta) => {
               return <tr>
                 <td>{volta + 1}</td>
                 <td>{this.getLabelTempo(serie)}</td>
+                <td></td>
               </tr>
             })}
           </table>

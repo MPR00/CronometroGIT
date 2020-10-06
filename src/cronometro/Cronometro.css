@@ -35,8 +35,8 @@
   width: 100%;
   font-size: 5vh;
   letter-spacing: 4px;
-  color: #fff;
-  text-shadow: 0 0 6px darken(#fff, 20%);
+  color:aliceblue;
+  text-shadow: 0 0 6px darken(aliceblue, 20%);
 }
 
 .chronotime-text span {
@@ -49,9 +49,10 @@
   width: 45vw;
   border-radius: 3vh;
   margin-left: 1vw;
-  border-top: 5px outset rgba(0, 0, 0, 0.3);
+  border: 1px outset rgba(0, 0, 0, 0.3);
+  border-top: 3px outset rgba(0, 0, 0, 0.3);
   justify-content: center;
-  height: auto;
+  height: 75vh;
   color: #d1d1d1;;
   box-shadow: 1px 2vh 5vh #242424;
   border-radius: 3vh;
@@ -80,9 +81,8 @@
 }
 
 .row-table {
-  margin-bottom: 60px;
   margin-left: 3vw;
-  height: 76vh;
+  height: 75vh;
 }
 
 table {
@@ -93,8 +93,8 @@ table td,
 th {
   width: 100vw;
   font-size: 18px;
-  border-bottom: 1px #fff;
-  color: #fff;
+  border-bottom: 1px aliceblue;
+  color: aliceblue;
   padding: 10px;
   text-align: center;
   justify-content: center;
