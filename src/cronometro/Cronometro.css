@@ -1,57 +1,52 @@
-.App {
-  text-align: center;
-  background-color: #000000;
+.Cronometro{
+    display: flex;
+    align-items: center;
+    text-align: center;
+    height: 100vh;
+    width: auto;
+    border-radius: 10px;
+    border: 5px outset rgba(0,0,0,0.3);
+    background-color: #282c34;
+    color: aliceblue;
 }
 
-.cronometro-dentro{
-  background-color: #282c34;
-  height: auto;
-  width: auto;
-  color: aliceblue;
-  text-align: center;
-  border-radius: 10px;
-  border: 5px outset rgba(0,0,0,0.3);
-}
-
-.cabecalho{
+.chronotime {
+  letter-spacing: 4px;
+  border-radius: 50%;
+  border: 5px outset rgba(100, 98, 224, 0.3);
+  width: 200px;
+  height: 200px;
+  color:  rgb(100, 98, 224);
+  display: flex;
+  flex-direction: row;
   justify-content: center;
-  padding-top: 30px;
-  color: rgb(100, 98, 224);
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  align-items: center;
+  margin-top: 10vh;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 10vh;
 }
 
-.mostrador{
-letter-spacing: 4px;
-border-radius: 50%;
-border: 5px outset rgba(100, 98, 224, 0.3);
-width: 200px;
-height: 200px;
-color:  rgb(100, 98, 224);
-display: flex;
-flex-direction: row;
-justify-content: center;
-align-items: center;
-margin-top: 10vh;
-margin-left: auto;
-margin-right: auto;
-margin-bottom: 10vh;
+.chronotime-text {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  text-align: center;
+  width: 100%;
+  font-size: 5vh;
+  letter-spacing: 4px;
+  color: #fff;
+  text-shadow: 0 0 6px darken(#fff, 20%);
 }
 
-.botao{
-  width:15vw ;
-  height: auto;
-  margin-left: 1vw;
-  border-radius: 10vh;
-  padding: 1px 1px 1px 1px;
-  border:  outset rgba(100, 98, 224, 0.3);
-  background-color:  rgba(145, 144, 230, 0.3);
-  justify-content: center;
-  display: inline-block;
-  box-shadow: 1px 5px 10px #242424;
+.chronotime-text span {
+  text-align: center;
+  display: block;
+  width: 100%;
 }
 
-.parcial{
-  width: 95vw;
+.row {
+  width: 45vw;
   border-radius: 3vh;
   margin-left: 1vw;
   border-top: 5px outset rgba(0, 0, 0, 0.3);
@@ -64,6 +59,29 @@ margin-bottom: 10vh;
   margin-left: 2vw;
   margin-bottom: 10vh;
   padding-bottom: 5vh;
+}
+
+.row button {
+  color: aliceblue;
+  width:25vw ;
+  height: 5vh;
+  margin-left: 1vw;
+  margin-right: 1vw;
+  margin-top: 1vw;
+  border-radius: 3vw;
+  border:  outset rgba(100, 98, 224, 0.3);
+  background-color:  rgba(145, 144, 230, 0.3);
+  box-shadow: 1px 5px 10px #242424;
+}
+
+.row button:hover {
+  font-weight: bold;
+  color: rgba(100, 98, 224, 0.938);
+}
+
+.row-table {
+  margin-bottom: 60px;
+  margin-left: 3vw;
 }
 
 table {

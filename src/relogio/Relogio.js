@@ -6,7 +6,7 @@ class Relogio extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      timezone: 'America/Bahia',
+      timezone: 'America/Recife',
       zones: moment.tz.zonesForCountry('BR'),
       tempo: moment()
     }
@@ -35,12 +35,12 @@ class Relogio extends React.Component {
       <div className="relogio">
 
         <div className="relogio-text">
-          <span className="relogio-dia">{this.getLabelDia()}</span>
-          <span className="relogio-tempo">{this.getLabelTempo()}</span>
-          <span className="relogio-timezone">{this.state.timezone}</span>
+          <span className="relogio-data">{this.getLabelDia()}</span>
+          <span className="relogio-horario">{this.getLabelTempo()}</span>
+          <span className="relogio-fuso">{this.state.timezone}</span>
 
 
-          <div className="parcial parcial-buttons">
+          <div className="display display-buttons">
             {this.state.zones.map(zone => {
               return <button
                 type="button"

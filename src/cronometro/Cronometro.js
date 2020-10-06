@@ -1,22 +1,15 @@
 import React from 'react'
-import Contador from '../Contador'
-import Botao from '../Botao'
-import LabelRelogio from '../LabelRelogio'
-import './Cronometro.css';
+import moment from 'moment'
+import './Cronometro.css'
 
 class Cronometro extends React.Component {
   constructor(props) {
-    super(props);
+    super(props)
     this.state = {
-      segundos: 0,
-      minutos: 0,
-      stop: false,
-      nameStop: "Stop",
-      name: "CRONOMETRO",
-      parcial: "",
-      series: [],
-      interval: null
-    };
+      interval: null,
+      tempo: 0,
+      series: []
+    }
   }
 
   iniciarCronometro() {
@@ -31,15 +24,15 @@ class Cronometro extends React.Component {
     this.setState({ interval });
   }
 
-  zerarCronometro() {
-    this.state.segundos = -1
-    this.state.minutos = 0
-    this.state.parcial = ""
+  pararCronometro() {
+    clearInterval(this.state.interval)
+    this.setState({ interval: null })
   }
 
-  parcial() {
-    let p = this.state.minutos + ":" + this.state.segundos + "\n\n"
-    this.state.parcial = this.state.parcial + p
+  zerarCronometro() {
+    this.pararCronometro()
+    this.setState({ tempo: 0 })
+    this.setState({ serie: "" })
   }
 
   adicionarSerie() {
@@ -48,72 +41,65 @@ class Cronometro extends React.Component {
     this.setState({ series })
   }
 
-  pararTempo() {
-    this.setState({
-      stop: !this.state.stop
-    })
-    if (this.state.stop)
-      this.state.nameStop = "Stop"
-    else
-      this.state.nameStop = "Start"
-  }
-
-  incrementar() {
-    if (this.state.stop === false) {
-      this.setState(
-        function (state, props) {
-          if (state.segundos >= 60) {
-            this.zerar();
-            this.incrementarMinuto(state);
-          }
-          return ({ segundos: state.segundos + 1 })
-        })
-    }
-  }
-
-  incrementarMinuto(state) {
-    this.setState(() => {
-      return { minutos: state.minutos + 1 }
-    })
-  };
-
-  zerar() {
-    this.setState({
-      segundos: 0
-    })
-  }
-
-  componentDidMount() {
-    this.timer = setInterval(
-      () => this.incrementar(), 1000)
+  getLabelTempo(segundos) {
+    return moment()
+      .startOf('day')
+      .seconds(segundos)
+      .format('HH:mm:ss')
   }
 
   render() {
-
     return (
-      <body>
+      <div className="Cronometro">
+        <div className="row">
+          <div className="chronotime">
+            <div className="chronotime-text">
+              <span>{this.getLabelTempo(this.state.tempo)}</span>
+            </div>
+          </div>
 
-
-        <div class="cronometro-dentro">
-
-
-          <div class="cabecalho"><LabelRelogio name={this.state.name} /></div>
-          <div class="mostrador"><Contador minutos={this.state.minutos} segundos={this.state.segundos} /></div>
-          <div class="botao"><Botao onClick={() => this.zerarCronometro()} label={"Zerar"} /></div>
-          <div class="botao"><Botao onClick={() => this.pararTempo()} label={this.state.nameStop} /></div>
-          <div class="botao"><Botao onClick={() => this.parcial()} label={"Pacial"} /></div>
-          <div class="parcial">
-            <table>
-              <tr>
-                <th>Indíce</th>
-                <th>Tempo</th>
-              </tr>
-              <LabelRelogio name={this.state.parcial} />
-            </table>
+          <div>
+            <button
+              type="button"
+              disabled={this.state.interval}
+              onClick={event => this.iniciarCronometro(event)}>
+              {this.state.tempo === 0 ? 'Iniciar' : 'Continuar'}
+            </button>
+            <button
+              type="button"
+              onClick={event => this.pararCronometro(event)}>
+              Parar
+          </button>
+            <button
+              type="button"
+              onClick={event => this.zerarCronometro(event)}>
+              Zerar
+          </button>
+            <button
+              type="button"
+              onClick={event => this.adicionarSerie(event)}>
+              Parcial
+          </button>
           </div>
         </div>
 
-      </body>
+
+        <div className="row row-table">
+          <table>
+            <tr>
+              <th>Volta</th>
+              <th>Tempo</th>
+            </tr>
+
+            {this.state.series.map((serie, volta) => {
+              return <tr>
+                <td>{volta + 1}</td>
+                <td>{this.getLabelTempo(serie)}</td>
+              </tr>
+            })}
+          </table>
+        </div>
+      </div>
     );
   }
 }

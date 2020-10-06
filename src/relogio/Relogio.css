@@ -8,7 +8,6 @@
   border: 5px outset rgba(0,0,0,0.3);
   background-color: #282c34;
   color: aliceblue;
-  margin-bottom: 10px;
 }
 
 .relogio-text {
@@ -20,25 +19,38 @@
   color: aliceblue;
 }
 
-.relogio-text .relogio-tempo {
+.relogio-text .relogio-horario{
   text-align: center;
   display: block;
-  width: 100%;
 }
 
-.relogio-text .relogio-dia {
+.relogio-text .relogio-data {
   text-align: center;
   display: block;
-  width: 100%;
   font-size: 16px;
 }
 
-.relogio-text .relogio-timezone {
+.relogio-text .relogio-fuso {
   display: block;
   font-size: 14px;
 }
 
-.relogio .parcial button {
+.display{
+  height: 70vh;
+  width: 95vw;
+  border-radius: 3vh;
+  margin-left: 1vw;
+  border-top: 5px outset rgba(0, 0, 0, 0.3);
+  color: #d1d1d1;;
+  box-shadow: 1px 2vh 5vh #242424;
+  border-radius: 3vh;
+  margin-top: 10vh;
+  margin-left: 2vw;
+  margin-bottom: 10vh;
+  padding-bottom: 5vh;
+}
+
+.relogio .display button {
   color: aliceblue;
   width:25vw ;
   height: 5vh;
@@ -50,11 +62,11 @@
   box-shadow: 1px 5px 10px #242424;
 }
 
-.relogio .parcial button:hover {
+.relogio .display button:hover {
   font-weight: bold;
   color: rgba(100, 98, 224, 0.938);
 }
 
-.relogio .parcial-buttons {
+.relogio .display-buttons {
   text-align: center;
 }
