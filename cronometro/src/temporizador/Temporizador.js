@@ -3,60 +3,117 @@ import './Temporizador.css';
 
 
 class Temporizador extends React.Component {
-  state = {
-    horas: 0,
-    minutes: 0,
-    seconds: 5,
-}
+    constructor() {
+        super();
+        this.state = {
+            interval: null,
+            horas: '',
+           minutos: '', 
+           segundos: ''
+           }
+           this.handleChangeHoras = this.handleChangeHoras.bind(this)
+           this.handleChangesegundos = this.handleChangesegundos.bind(this)
+           this.handleChangeminutos = this.handleChangeminutos.bind(this)
+        }
+handleChangesegundos  (e) { 
+    this.setState({segundos: e.target.value});
+  }
+handleChangeminutos  (e) { 
+    this.setState({minutos: e.target.value});
+  }
+  handleChangeHoras  (e) { 
+    this.setState({horas: e.target.value});
+  }
 
+  
+  pararTemporizador() {
+    clearInterval(this.myInterval)
+  }
 componentDidMount() {
+    
     this.myInterval = setInterval(() => {
-        const { seconds, minutes, horas } = this.state
-
-        if (seconds > 0) {
-            this.setState(({ seconds }) => ({
-                seconds: seconds - 1
+        clearInterval(this.interval)
+        this.setState({ interval: null })
+        const { segundos, minutos, horas } = this.state
+        
+        if (segundos > 0) {
+            this.setState(({ segundos }) => ({
+                segundos: segundos - 1
             }))
         }
-        if (seconds === 0) {
-          if (minutes > 0){
+        if (segundos === 0) {
+          if (minutos > 0){
          
-                this.setState(({ minutes }) => ({
-                    minutes: minutes - 1,
-                    seconds: 59
+                this.setState(({ minutos }) => ({
+                    minutos: minutos - 1,
+                    segundos: 59
                 }))
             }
         }
-        if (seconds === 0) {
-          if (minutes === 0) {
+        if (segundos === 0) {
+          if (minutos === 0) {
             if(horas === 0) {
             clearInterval(this.myInterval)
           } else {
               this.setState(({ horas }) => ({
                   horas: horas - 1,
-                  minutes: 59,
-                  seconds: 59,
+                  minutos: 59,
+                  segundos: 59,
               }))
           }
       }
     }
     }, 1000)
 }
-
-componentWillUnmount() {
-    clearInterval(this.myInterval)
+  
+zerarTemporizador() {
+    this.pararTemporizador()
+    this.setState({ horas: ''})
+    this.setState({ minutos: '' })
+    this.setState({ segundos: ''})
 }
 
+
 render() {
-    const {horas, minutes, seconds } = this.state
+    const {horas, minutos, segundos } = this.state
     return (
       <div className='Temporizador'>
         <div>
-            { horas === 0 && minutes === 0 && seconds === 0
-                ? <h1>Busted!</h1>
-                : <h1>Time Remaining:{horas}:{minutes}:{seconds < 10 ? `0${seconds}` : seconds}</h1>
+            { horas === 0 && minutos === 0 && segundos === 0
+                ? <h1>Acabou o tempo!</h1>
+                : <h1>Tempo restante:     {horas < 10 ? `0${horas}` : horas}:{minutos < 10 ? `0${minutos}` : minutos}:{segundos < 10 ? `0${segundos}` : segundos}</h1>
             }
         </div>
+        <div>
+            <button
+              type="button"
+              disabled={this.state.interval}
+              onClick={event => this.componentDidMount(event)}>
+              {this.state.tempo === 0 ? 'Iniciar' : 'Continuar'}
+            </button>
+            <button
+              type="button"
+              onClick={event => this.pararTemporizador(event)}>
+              Parar
+          </button>
+          <button
+              type="button"
+              onClick={event => this.zerarTemporizador(event)}>
+              Zerar Temporizador
+          </button>
+            </div>
+        <div>
+        <input type="number" horas={this.state.value} onChange={this.handleChangeHoras}/>
+        <div>{this.state.value}</div>
+    </div>
+    <div>
+        <input type="number" minutos={this.state.value} onChange={this.handleChangeminutos}/>
+        <div>{this.state.value}</div>
+    </div>
+    <div>
+        <input type="number" segundos={this.state.value} onChange={this.handleChangesegundos}/>
+        <div>{this.state.value}</div>
+    </div>
         </div>
     )
 }
