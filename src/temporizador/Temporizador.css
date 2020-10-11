@@ -6,29 +6,24 @@
     background-color: #000000;
   }
   
-  .cronometro-dentro{
-    background-color: #282c34;
-    height: 98vh;
-    width: auto;
-    color: aliceblue;
-    text-align: center;
-    border-radius: 10px;
-    border: 5px outset rgba(0,0,0,0.3);
-  }
-  
-  .cabecalho{
-    justify-content: center;
-    padding-top: 30px;
-    color: rgb(100, 98, 224);
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-  }
-  
-  .mostrador{
+ .Temporizador{
+ display: flex;
+ align-items: center;
+ text-align: center;
+ height: 100vh;
+ width: auto;
+ border-radius: 10px;
+ border: 5px outset rgba(0,0,0,0.3);
+ background-color: #282c34;
+ color: aliceblue;
+ }
+
+ .mostrador {
   letter-spacing: 4px;
   border-radius: 50%;
   border: 5px outset rgba(100, 98, 224, 0.3);
-  width: 20vw;
-  height: 20vh;
+  width: 200px;
+  height: 200px;
   color:  rgb(100, 98, 224);
   display: flex;
   flex-direction: row;
@@ -38,6 +33,7 @@
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 10vh;
+
   }
   
   .botao{
@@ -89,3 +85,45 @@
  Margin-top: 10vh;
  color: #fff
  }
+
+
+
+.fundo {
+  width: 92vw;
+  border-radius: 3vh;
+  margin-left: 1vw;
+  border: 1px outset rgba(0, 0, 0, 0.3);
+  border-top: 3px outset rgba(0, 0, 0, 0.3);
+  justify-content: center;
+  height: 75vh;
+  color: #d1d1d1;;
+  box-shadow: 1px 2vh 5vh #242424;
+  border-radius: 3vh;
+  margin-top: 10vh;
+  margin-left: 2vw;
+  margin-bottom: 10vh;
+  padding-bottom: 5vh;
+}
+
+ .botao button {
+  color: aliceblue;
+  width:25vw ;
+  height: 5vh;
+  margin-left: 1vw;
+  margin-right: 1vw;
+  margin-top: 10px;
+  border-radius: 3vw;
+  border:  outset rgba(100, 98, 224, 0.3);
+  background-color:  rgba(145, 144, 230, 0.3);
+  box-shadow: 1px 5px 10px #242424;
+}
+
+.botao button:hover {
+  font-weight: bold;
+  color: rgba(100, 98, 224, 0.938);
+}
+
+.botao .mostrador-buttons {
+  text-align: center;
+}
+

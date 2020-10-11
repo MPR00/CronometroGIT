@@ -35,6 +35,6 @@ li:hover {
 
 li.active {
     font-weight: bold;
-    border-top: 1px solid #ffffff;
+    border-top: 2px solid rgba(100, 98, 224, 0.938);
     background-color:rgba(100, 98, 224, 0.083);
 }
