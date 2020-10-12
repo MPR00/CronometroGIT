@@ -6,7 +6,7 @@ class Relogio extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      timezone: 'America/Recife',
+      timezone: 'America/Bahia',
       zones: moment.tz.zonesForCountry('BR'),
       tempo: moment()
     }
