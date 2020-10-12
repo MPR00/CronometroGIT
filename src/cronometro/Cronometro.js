@@ -31,8 +31,9 @@ class Cronometro extends React.Component {
 
   zerarCronometro() {
     this.pararCronometro()
+    this.adiocionarSerie()
     this.setState({ tempo: 0 })
-    this.setState({ serie: "" })
+    this.setState({ series: 'null' })
   }
 
   adicionarSerie() {
