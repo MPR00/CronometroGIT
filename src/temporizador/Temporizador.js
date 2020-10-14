@@ -93,7 +93,7 @@ class Temporizador extends React.Component {
                             type="button"
                             disabled={this.state.interval}
                             onClick={event => this.iniciarTemporizador(event)}>
-                            {this.state.tempo === 0 ? 'INICIAR' : 'Iniciar'}
+                            {this.state.tempo === 0 ? 'Continuar' : 'Iniciar'}
                         </button>
                         <button
                             type="button"

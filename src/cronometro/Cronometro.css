@@ -18,7 +18,7 @@
   height: 200px;
   color:  rgb(100, 98, 224);
   display: flex;
-  flex-direction: row;
+  flex-direction: zz;
   justify-content: center;
   align-items: center;
   margin-top: 10vh;
@@ -45,7 +45,7 @@
   width: 100%;
 }
 
-.row {
+.interno {
   width: 45vw;
   border-radius: 3vh;
   margin-left: 1vw;
@@ -62,7 +62,7 @@
   padding-bottom: 5vh;
 }
 
-.row button {
+.interno button {
   color: aliceblue;
   width:25vw ;
   height: 5vh;
@@ -75,12 +75,12 @@
   box-shadow: 1px 5px 10px #242424;
 }
 
-.row button:hover {
+.interno button:hover {
   font-weight: bold;
   color: rgba(100, 98, 224, 0.938);
 }
 
-.row-table {
+.interno-table {
   margin-left: 3vw;
   height: 75vh;
 }

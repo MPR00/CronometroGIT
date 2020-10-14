@@ -8,21 +8,21 @@ class Relogio extends React.Component {
     this.state = {
       timezone: 'America/Bahia',
       zones: moment.tz.zonesForCountry('BR'),
-      tempo: moment()
+      Horario: moment()
     }
 
     setInterval(() => {
-      this.setState({ tempo: moment() });
+      this.setState({ Horario: moment() });
     }, 1000);
 
   }
 
-  getLabelTempo() {
-    return moment.tz(this.state.tempo, this.state.timezone).format('HH:mm:ss')
+  getLabelHorario() {
+    return moment.tz(this.state.Horario, this.state.timezone).format('HH:mm:ss')
   }
 
-  getLabelDia() {
-    return moment(this.state.tempo).format('DD/MM/YYYY')
+  getLabelData() {
+    return moment(this.state.Horario).format('DD/MM/YYYY')
   }
 
   setarTimeZone(timezone) {
@@ -35,8 +35,8 @@ class Relogio extends React.Component {
       <div className="relogio">
 
         <div className="relogio-text">
-          <span className="relogio-data">{this.getLabelDia()}</span>
-          <span className="relogio-horario">{this.getLabelTempo()}</span>
+          <span className="relogio-data">{this.getLabelData()}</span>
+          <span className="relogio-horario">{this.getLabelHorario()}</span>
           <span className="relogio-fuso">{this.state.timezone}</span>
 
 

@@ -12,7 +12,7 @@ class Cronometro extends React.Component {
     }
   }
 
-  iniciarCronometro() {
+  StartCronometro() {
     if (this.state.interval) {
       clearInterval(this.state.interval)
     }
@@ -24,18 +24,17 @@ class Cronometro extends React.Component {
     this.setState({ interval });
   }
 
-  pararCronometro() {
+  StopCronometro() {
     clearInterval(this.state.interval)
     this.setState({ interval: null })
   }
 
-  zerarCronometro() {
-    this.pararCronometro()
-    this.setState({ tempo: 0 })
-    this.setState({ serie: "" })
+  ZeroCronometro() {
+    this.StopCronometro()
+    this.setState({ tempo: 0, series: [] })
   }
 
-  adicionarSerie() {
+  AcrescentarSerie() {
     const series = this.state.series.concat([this.state.tempo])
 
     this.setState({ series })
@@ -48,10 +47,21 @@ class Cronometro extends React.Component {
       .format('HH:mm:ss')
   }
 
+  getIntervalo (parcial, volta) {
+    const parcialAnterior = this.state.series[volta - 1]
+
+    if (!parcialAnterior) return '-'
+
+    const intervalo = moment(parcial)
+      .diff(parcialAnterior)
+
+    return this.getLabelTempo(intervalo)
+  }
+  
   render() {
     return (
       <div className="Cronometro">
-        <div className="row">
+        <div className="interno">
           <div className="chronotime">
             <div className="chronotime-text">
               <span>{this.getLabelTempo(this.state.tempo)}</span>
@@ -62,29 +72,29 @@ class Cronometro extends React.Component {
             <button
               type="button"
               disabled={this.state.interval}
-              onClick={event => this.iniciarCronometro(event)}>
+              onClick={event => this.StartCronometro(event)}>
               {this.state.tempo === 0 ? 'Iniciar' : 'Continuar'}
             </button>
             <button
               type="button"
-              onClick={event => this.pararCronometro(event)}>
+              onClick={event => this.StopCronometro(event)}>
               Parar
           </button>
             <button
               type="button"
-              onClick={event => this.zerarCronometro(event)}>
+              onClick={event => this.ZeroCronometro(event)}>
               Zerar
           </button>
             <button
               type="button"
-              onClick={event => this.adicionarSerie(event)}>
+              onClick={event => this.AcrescentarSerie(event)}>
               Parcial
           </button>
           </div>
         </div>
 
 
-        <div className="row row-table">
+        <div className="interno interno-table">
           <table>
             <tr>
               <th>Volta</th>
@@ -96,7 +106,7 @@ class Cronometro extends React.Component {
               return <tr>
                 <td>{volta + 1}</td>
                 <td>{this.getLabelTempo(serie)}</td>
-                <td></td>
+                <td>{this.getIntervalo(serie, volta)}</td>
               </tr>
             })}
           </table>

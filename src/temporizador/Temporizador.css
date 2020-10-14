@@ -75,10 +75,11 @@
 }
 
 .tempo{
+  min-width: 40vw;
   text-align: center;
   width:25vw ;
   height: 16vh;
-  margin-left: 33vw;
+  margin-left: 25vw;
   margin-top: 5vh;
   border-radius: 3vw;
   border:  outset rgba(100, 98, 224, 0.3);
