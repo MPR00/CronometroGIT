@@ -47,7 +47,7 @@ class Cronometro extends React.Component {
       .format('HH:mm:ss')
   }
 
-  getIntervalo (parcial, volta) {
+  getIntervalo(parcial, volta) {
     const parcialAnterior = this.state.series[volta - 1]
 
     if (!parcialAnterior) return '-'
@@ -57,13 +57,13 @@ class Cronometro extends React.Component {
 
     return this.getLabelTempo(intervalo)
   }
-  
+
   render() {
     return (
       <div className="Cronometro">
         <div className="interno">
-          <div className="chronotime">
-            <div className="chronotime-text">
+          <div className="visor">
+            <div className="visor-text">
               <span>{this.getLabelTempo(this.state.tempo)}</span>
             </div>
           </div>

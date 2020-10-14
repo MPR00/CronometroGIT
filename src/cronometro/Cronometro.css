@@ -1,22 +1,22 @@
-.Cronometro{
-    display: flex;
-    align-items: center;
-    text-align: center;
-    height: 100vh;
-    width: auto;
-    border-radius: 10px;
-    border: 5px outset rgba(0,0,0,0.3);
-    background-color: #282c34;
-    color: aliceblue;
+.Cronometro {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  height: 100vh;
+  width: auto;
+  border-radius: 10px;
+  border: 5px outset rgba(0, 0, 0, 0.3);
+  background-color: #282c34;
+  color: aliceblue;
 }
 
-.chronotime {
+.visor {
   letter-spacing: 4px;
   border-radius: 50%;
   border: 5px outset rgba(100, 98, 224, 0.3);
   width: 200px;
   height: 200px;
-  color:  rgb(100, 98, 224);
+  color: rgb(100, 98, 224);
   display: flex;
   flex-direction: zz;
   justify-content: center;
@@ -27,7 +27,7 @@
   margin-bottom: 10vh;
 }
 
-.chronotime-text {
+.visor-text {
   display: flex;
   align-items: center;
   height: 100%;
@@ -35,11 +35,11 @@
   width: 100%;
   font-size: 5vh;
   letter-spacing: 4px;
-  color:aliceblue;
+  color: aliceblue;
   text-shadow: 0 0 6px darken(aliceblue, 20%);
 }
 
-.chronotime-text span {
+.visor-text span {
   text-align: center;
   display: block;
   width: 100%;
@@ -53,7 +53,8 @@
   border-top: 3px outset rgba(0, 0, 0, 0.3);
   justify-content: center;
   height: 75vh;
-  color: #d1d1d1;;
+  color: #d1d1d1;
+  ;
   box-shadow: 1px 2vh 5vh #242424;
   border-radius: 3vh;
   margin-top: 10vh;
@@ -64,14 +65,14 @@
 
 .interno button {
   color: aliceblue;
-  width:25vw ;
+  width: 25vw;
   height: 5vh;
   margin-left: 1vw;
   margin-right: 1vw;
   margin-top: 1vw;
   border-radius: 3vw;
-  border:  outset rgba(100, 98, 224, 0.3);
-  background-color:  rgba(145, 144, 230, 0.3);
+  border: outset rgba(100, 98, 224, 0.3);
+  background-color: rgba(145, 144, 230, 0.3);
   box-shadow: 1px 5px 10px #242424;
 }
 
@@ -89,8 +90,7 @@ table {
   border-collapse: collapse;
 }
 
-table td,
-th {
+table td, th {
   width: 100vw;
   font-size: 18px;
   border-bottom: 1px aliceblue;

@@ -1,7 +1,7 @@
 import React from 'react';
-import './Tabs.css';
+import './Header.css';
 
-class Tabs extends React.Component {
+class Header extends React.Component {
   constructor (props) {
     super(props)
     this.state = {}
@@ -9,7 +9,7 @@ class Tabs extends React.Component {
 
   render () {
     return (
-      <div className="Tabs">
+      <div className="Header">
         <ul>
           <li onClick={event => this.props.handleSetActive('relogio')} className={this.props.active === 'relogio' ? 'active': ''}>
             Relógio
@@ -26,4 +26,4 @@ class Tabs extends React.Component {
   }
 }
 
-export default Tabs;
+export default Header;

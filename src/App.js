@@ -3,10 +3,10 @@ import Cronometro from './cronometro/Cronometro';
 import Relogio from './relogio/Relogio';
 import Temporizador from './temporizador/Temporizador';
 
-import Tabs from './tabs/Tabs';
+import Header from './Header/Header';
 
 class App extends React.Component {
-  constructor (props) {
+  constructor(props) {
     super(props)
     this.state = {
       active: 'cronometro'
@@ -15,33 +15,33 @@ class App extends React.Component {
     this.handleSetActive = this.handleSetActive.bind(this);
   }
 
-  handleSetActive (active) {
+  handleSetActive(active) {
     this.setState({ active })
   }
 
-  render () {
-        if (this.state.active === 'cronometro') {
+  render() {
+    if (this.state.active === 'cronometro') {
       return (
-        <div className="App">
+        <div className="menu">
           <Cronometro />
-          <Tabs active={this.state.active} handleSetActive={this.handleSetActive}/>
+          <Header active={this.state.active} handleSetActive={this.handleSetActive} />
         </div>
       );
     }
-    
+
     if (this.state.active === 'relogio') {
       return (
-        <div className="App">
+        <div className="menu">
           <Relogio />
-          <Tabs active={this.state.active} handleSetActive={this.handleSetActive}/>
+          <Header active={this.state.active} handleSetActive={this.handleSetActive} />
         </div>
       );
     }
 
     return (
-      <div className="App">
+      <div className="menu">
         <Temporizador />
-        <Tabs active={this.state.active} handleSetActive={this.handleSetActive}/>
+        <Header active={this.state.active} handleSetActive={this.handleSetActive} />
       </div>
     );
   }

@@ -107,7 +107,7 @@ class Temporizador extends React.Component {
                      </button>
                     </div>
 
-                    <div  className='tempo'>
+                    <div className='tempo'>
                         <div className='horas'>
                             <input type="number" horas={this.state.value} onChange={this.handleChangeHoras} placeholder="Digite as horas..." />
                             <div>{this.state.value}</div>
@@ -118,7 +118,7 @@ class Temporizador extends React.Component {
                             <div>{this.state.value}</div>
                         </div>
 
-                        <div className= 'segundos'>
+                        <div className='segundos'>
                             <input type="number" segundos={this.state.value} onChange={this.handleChangesegundos} placeholder="Digite os segundos..." />
                             <div>{this.state.value}</div>
                         </div>

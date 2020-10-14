@@ -5,7 +5,7 @@
   height: auto;
   width: auto;
   border-radius: 10px;
-  border: 5px outset rgba(0,0,0,0.3);
+  border: 5px outset rgba(0, 0, 0, 0.3);
   background-color: #282c34;
   color: aliceblue;
 }
@@ -19,7 +19,7 @@
   color: aliceblue;
 }
 
-.relogio-text .relogio-horario{
+.relogio-text .relogio-horario {
   text-align: center;
   display: block;
 }
@@ -35,7 +35,7 @@
   font-size: 14px;
 }
 
-.display{
+.display {
   height: 70vh;
   width: 95vw;
   border-radius: 3vh;
@@ -53,13 +53,13 @@
 
 .relogio .display button {
   color: aliceblue;
-  width:25vw ;
+  width: 25vw;
   height: 5vh;
   margin-left: 1vw;
   margin-right: 1vw;
   border-radius: 3vw;
-  border:  outset rgba(100, 98, 224, 0.3);
-  background-color:  rgba(145, 144, 230, 0.3);
+  border: outset rgba(100, 98, 224, 0.3);
+  background-color: rgba(145, 144, 230, 0.3);
   box-shadow: 1px 5px 10px #242424;
 }
 
