@@ -82,7 +82,7 @@ class Temporizador extends React.Component {
                 <div className='fundo'>
 
                     <div className='mostrador'>
-                        {horas === 0 && minutos === 0 && segundos === 0
+                        {horas == 0 && minutos == 0 && segundos == 0
                             ? <h1>Tempo esgotado!</h1>
                             : <h1>Tempo restante:     {horas < 10 ? `0${horas}` : horas}:{minutos < 10 ? `0${minutos}` : minutos}:{segundos < 10 ? `0${segundos}` : segundos}</h1>
                         }
